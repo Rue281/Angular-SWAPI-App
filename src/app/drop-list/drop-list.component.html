@@ -1,0 +1,10 @@
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  <!-- <div class="example-box" *ngFor="let movie of personsArray" cdkDrag>
+    {{ name }}
+  </div> -->
+  <div *ngFor="let person of personsArray" class="example-box" cdkDrag>
+    name:{{ person.name }} <br />
+    height: {{ person.height }} <br />
+    homeworld: {{ person.homeWorld }} <br />
+  </div>
+</div>
