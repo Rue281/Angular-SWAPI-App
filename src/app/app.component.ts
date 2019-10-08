@@ -10,6 +10,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class AppComponent implements OnInit {
   title = "angular-swapi-app";
   searchForm: FormGroup;
+
+  //regular exp for numric values
+  numericRegex = /^(\d+\d)$|^(\d+)$/;
   submitted = false;
 
   //TODO:
@@ -28,12 +31,17 @@ export class AppComponent implements OnInit {
   ) {}
   ngOnInit() {
     //instantiate searchForm
-    //TODO: validate that id between 1-10
     this.searchForm = this.formBuilder.group({
       idInputField: [
         "",
-        [Validators.required, Validators.min(1), Validators.max(10)]
-        // Validators.pattern("^[1-10]*$")
+        [
+          Validators.compose([
+            Validators.required,
+            Validators.pattern(this.numericRegex),
+            Validators.min(1),
+            Validators.max(88)
+          ])
+        ]
       ]
     });
   }
