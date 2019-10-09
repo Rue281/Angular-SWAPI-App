@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  title = "angular-swapi-app";
+  title = "SWAPI App";
   searchForm: FormGroup;
 
   //regular exp for numric values
@@ -62,38 +62,36 @@ export class AppComponent implements OnInit {
   //change method name to searchButtonHandler
   //catch error
   onSearch() {
-    // this.personId = id;
-    this.personId = this.searchForm.get("idInputField").value;
+    // if form is valid do seearch
+    if (this.searchForm.valid) {
+      // this.personId = id;
+      this.personId = this.searchForm.get("idInputField").value;
 
-    // stop here if form is invalid
-    if (this.searchForm.invalid) {
-      return;
+      // console.log("ID is: " + this.personId);
+
+      this.service.swapiModule.getPerson(this.personId, value => {
+        //TODO: TEst if person object is returned from API & not empty
+        let person: any = {
+          name: value.name,
+          height: value.height,
+          homeWorld: value.homeworld
+        };
+
+        //TODO: Test if persons array is not empty
+        //loop with person{} on the persons array..if person already there don't push
+        //add object into persons array
+        this.persons.push(person);
+
+        // console.log(
+        //   "his name: " +
+        //     person.name +
+        //     " his height: " +
+        //     person.height +
+        //     " his homeworld " +
+        //     person.homeWorld
+        // );
+      });
+      //this.submitted = true;
     }
-
-    // console.log("ID is: " + this.personId);
-
-    this.service.swapiModule.getPerson(this.personId, value => {
-      //TODO: TEst if person object is returned from API & not empty
-      let person: any = {
-        name: value.name,
-        height: value.height,
-        homeWorld: value.homeworld
-      };
-
-      //TODO: Test if persons array is not empty
-      //loop with person{} on the persons array..if person already there don't push
-      //add object into persons array
-      this.persons.push(person);
-
-      // console.log(
-      //   "his name: " +
-      //     person.name +
-      //     " his height: " +
-      //     person.height +
-      //     " his homeworld " +
-      //     person.homeWorld
-      // );
-    });
-    //this.submitted = true;
   }
 }

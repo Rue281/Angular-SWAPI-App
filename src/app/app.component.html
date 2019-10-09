@@ -1,48 +1,55 @@
-<form [formGroup]="searchForm">
-  <div class="form-group">
-    <input
-      formControlName="idInputField"
-      required
-      class="form-control"
-      placeholder="Search with id of person"
-      [ngClass]="{ 'is-invalid': f.idInputField.errors }"
-    />
-    <!-- type="text"  -->
+<div class="bg-image"></div>
+<div class="content">
+  <span>
+    {{ title }}
+  </span>
+  <h3>Please enter an id for a charachter</h3>
+  <form [formGroup]="searchForm" class="form">
+    <div class="form-group">
+      <input
+        formControlName="idInputField"
+        required
+        class="form-control form-control"
+        placeholder="Search by id of person"
+        [ngClass]="{ 'is-invalid': f.idInputField.errors }"
+      />
+      <!-- type="text"  -->
 
-    <!-- [ngClass]="{ 'is-invalid': submitted && f.idInputField.errors }" -->
+      <!-- [ngClass]="{ 'is-invalid': submitted && f.idInputField.errors }" -->
 
-    <!-- <div
+      <!-- <div
         *ngIf="f.idInputField.errors.min(1) && f.idInputField.errors.max(10)"
       > -->
 
-    <div *ngIf="f.idInputField.errors" class="invalid-feedback">
-      <div *ngIf="f.idInputField.errors.required">Id is required</div>
-      <!-- pattern doesn't work with type=number -->
-      <div *ngIf="f.idInputField.errors.pattern">
-        Id must be a number
-      </div>
-      <div
-        *ngIf="
-          searchForm.controls['idInputField'].hasError('min') ||
-          searchForm.controls['idInputField'].hasError('max')
-        "
-      >
-        Id must be between 1-88
+      <div *ngIf="f.idInputField.errors" class="invalid-feedback">
+        <div *ngIf="f.idInputField.errors.required">Id is required</div>
+        <!-- pattern doesn't work with type=number -->
+        <div *ngIf="f.idInputField.errors.pattern">
+          Id must be a number
+        </div>
+        <div
+          *ngIf="
+            searchForm.controls['idInputField'].hasError('min') ||
+            searchForm.controls['idInputField'].hasError('max')
+          "
+        >
+          Id must be between 1-88
+        </div>
       </div>
     </div>
-  </div>
-  <div class="form-group">
-    <button
-      class="btn btn-primary btn-block create-account"
-      type="button"
-      (click)="onSearch()"
-    >
-      Search
-      <!-- (click)="onSearch(personId.value)" -->
-    </button>
-  </div>
-</form>
+    <div class="form-group">
+      <button
+        class="btn btn-primary btn-block create-account"
+        type="button"
+        (click)="onSearch()"
+      >
+        Search
+        <!-- (click)="onSearch(personId.value)" -->
+      </button>
+    </div>
+  </form>
 
-<cdk-drag-drop-sorting-example
-  [persones]="persons"
-></cdk-drag-drop-sorting-example>
+  <cdk-drag-drop-sorting-example
+    [persones]="persons"
+  ></cdk-drag-drop-sorting-example>
+</div>

@@ -1,12 +1,13 @@
 .example-list {
   width: 500px;
   max-width: 100%;
-  border: solid 1px #ccc;
+  /* border: solid 1px #09c2dd; */
   min-height: 60px;
   display: block;
-  background: white;
-  border-radius: 4px;
+  background: unset;
+  /* border-radius: 4px; */
   overflow: hidden;
+  justify-content: center;
 }
 
 .example-box {
