@@ -8,7 +8,7 @@ export class SwapiService {
   // constructor(private http: Http) {}
 
   swapiModule = (function() {
-    var rootURL = "https://swapi.co/api/";
+    var rootURL = "https://swapi.dev/api/";
 
     function request(url, cb) {
       return fetch(url)

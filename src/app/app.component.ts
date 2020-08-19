@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
             Validators.required,
             Validators.pattern(this.numericRegex),
             Validators.min(1),
-            Validators.max(88)
+            Validators.max(83)
           ])
         ]
       ]
