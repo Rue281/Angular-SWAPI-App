@@ -21,9 +21,11 @@ export class AppComponent implements OnInit {
 
   // personsArray = [];
 
-  //TODO: check if the array goes with object not empty
-  //to send person data from parent to drop-list component using input decorator
+  //TODO: check if the array recieved not empty
+  //to recieve data from form component 
+
   persons = [];
+  personFromFormComponent: any;
 
   constructor(
     private service: SwapiService,
@@ -46,6 +48,11 @@ export class AppComponent implements OnInit {
     });
   }
 
+  sendPerson(person: any){
+    console.log("From child to parent");
+    console.log(person);
+    this.personFromFormComponent = person;
+  }
   // convenience getter for easy access to "idInputField" form-field
   get f() {
     console.log("input value: " + this.searchForm.controls);
