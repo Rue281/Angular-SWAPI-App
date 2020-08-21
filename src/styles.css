@@ -10,6 +10,10 @@ body {
   /* background: url("starWarsBG.jpg"); */
 }
 
+body,html {
+  height: 100%;
+  width: 100%;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
