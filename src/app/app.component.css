@@ -70,7 +70,20 @@ h3 {
   width: 50%;
   height: 50%;
   margin-top: 15%;
+  border: 10px solid #C4D9DC;
+  border-radius: 30px;
+  background-color: #C4D9DC;
 }
+
+.left{
+  background: url("../assets/starWars2.jpeg");
+  /* border: 10px solid #C4D9DC; */
+  border-radius: 30px;
+  background-repeat: round;
+    background-size: cover;
+    background-position: top;
+}
+
 .invalid-feedback {
   font-size: 15px;
 }
