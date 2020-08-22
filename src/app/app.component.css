@@ -66,10 +66,10 @@ h3 {
   float:none;
   margin:auto auto;
   position: relative;
-  top: 50%;
-  width: 50%;
-  height: 50%;
-  margin-top: 15%;
+  top: 0;
+  width: 75%;
+  height: 75%;
+  margin-top: 5%;
   border: 10px solid #C4D9DC;
   border-radius: 30px;
   background-color: #C4D9DC;

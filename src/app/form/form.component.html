@@ -1,14 +1,21 @@
-<form #swapiForm = "ngForm" (ngSubmit)="onSubmit(swapiForm)">
+<form #swapiForm = "ngForm" (ngSubmit)="onSubmit(swapiForm)" class="mySwapiForm">
   <input 
   name="personId" 
-  placeholder="From 1 to 83 ... only number"
+  placeholder="     From 1 to 83 ... only number"
   required
   type="number"
   pattern="([1-9]|[1-7][0-9]|8[0-3])"
   [(ngModel)]= "personId"
-  #idNumber= "ngModel"/>
-    <div *ngIf= "idNumber.invalid && (idNumber.dirty || idNumber.touched)">
-      class="alert alert-danger"
+  #idNumber= "ngModel" />
+  <button
+  class="btn btn-primary"
+  type="submit"
+  [disabled]="!swapiForm.valid">
+    Search
+  </button>
+    <div *ngIf= "idNumber.invalid && (idNumber.dirty || idNumber.touched)"
+    class="alert alert-danger ">
+      
         <div *ngIf="idNumber.errors.required">
           Id is required.
         </div>
@@ -16,10 +23,5 @@
           Only numbers are allowed between 1 and 83
         </div>
     </div>
-  <button
-  class="btn btn-primary"
-  type="submit"
-  [disabled]="!swapiForm.valid">
-    Search
-  </button>
+  
 </form>

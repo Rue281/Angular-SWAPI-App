@@ -19,6 +19,7 @@ export class FormComponent implements OnInit {
 
   persons = [];
   submitted = false;
+  
 
   // TODO: check if the array goes with object not empty
   // to send person data from parent to drop-list component using input decorator

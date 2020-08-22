@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule
   ],
+  exports: [FormComponent],
   providers: [SwapiService],
   bootstrap: [AppComponent]
 })

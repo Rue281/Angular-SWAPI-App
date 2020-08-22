@@ -2,10 +2,12 @@
 <div class="bg-image"> </div>
 <div class="row-fluid ">
   <div class="centering text-center content">
-  <div class="col-md-6 left">.col-md-6 left
-    here image
+  <div class="col-md-6 left">
+    <cdk-drag-drop-sorting-example
+    [person]="personFromFormComponent"
+  ></cdk-drag-drop-sorting-example>
   </div>
-  <div class="col-md-6 right">.col-md-6 right
+  <div class="col-md-6 right">
     <h3>Please enter an id for a charachter</h3>
 
     <app-form (childToParent)="sendPerson($event)"></app-form>
@@ -13,8 +15,6 @@
 </div>
 
  
-  <cdk-drag-drop-sorting-example
-    [person]="personFromFormComponent"
-  ></cdk-drag-drop-sorting-example>
+  
 </div>
 </div>
